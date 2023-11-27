@@ -1,38 +1,38 @@
 html {
-    font-size: 13px;
-    font-family: 'Barlow Semi Condensed', sans-serif;
     padding: 20px;
+    font-size: 13px;
+    background-color: hsl(210, 46%, 95%);
+    font-family: 'Barlow Semi Condensed', sans-serif;
     font-weight: 500;
 }
 
-.container,
-.person-container,
-.avatar-container,
-.top-text.name,
-.title,
-.name,
-.text-container {
+* {
     margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
 }
 
 .container {
-    padding: 10px;
-    border-radius: 15px;
     display: flex;
     flex-direction: column;
-    background-color: rgb(236, 236, 236);
 }
 
 .person-container {
     padding: 30px;
-    margin: 10px;
+    margin-bottom: 20px;
     border-radius: 10px;
-    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.1); 
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.2);
 }
 
 .person-container#person-container-1 {
     color: white;
-    background-color: hsl(263, 55%, 52%)
+    background-color: hsl(263, 55%, 52%);
+    position: relative;
 }
 
 .person-container#person-container-2 {
@@ -51,15 +51,26 @@ html {
     background-color: hsl(219, 29%, 14%)
 }
 
+#quote {
+    border-radius: 0%;
+    width: 100px;
+    height: auto;
+    position: absolute;
+    right: 20px;
+    top: 0;
+    z-index: 1;
+}
+
 .avatar-container {
     display: flex;
     align-items: center;
+    margin-bottom: 10px;
 }
 
 img {
-    width: 30px;
-    height: 30px;
-    border-radius: 100%;
+    width: 45px;
+    height: auto;
+    border-radius: 50%;
     margin-right: 15px;
 }
 
@@ -88,6 +99,7 @@ img#img-4 {
 .name {
     margin-bottom: 1.5px;
     font-weight: 600;
+    font-size: 13px;
 }
 
 .title {
@@ -95,26 +107,48 @@ img#img-4 {
     font-size: 0.9rem;
 }
 
+h2 {
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 2;
+}
+
 .text-container p {
     opacity: 70%;
 }
 
-@media(min-width: 1100px){
-    .container{
-        width: 1180px;
-        height: 600px;
+@media(min-width: 900px) {
+    body {
+        max-width: 1180px;
+        margin: 0 auto;
+    }
+
+    .container {
         flex-direction: row;
     }
-    .web-top, .web-bottom, .web-right{
+
+    .person-container {
+        margin-bottom: 20px;
+        margin-right: 20px;
+    }
+
+    .web-top,
+    .web-bottom,
+    .web-right {
         display: flex;
     }
-    .web-left{
+
+    .web-left {
         display: flex;
         flex-direction: column;
         flex-basis: 75%;
     }
-    .web-right{
-        flex-basis: 25%;
+
+    .web-right {
+        flex-basis: 23%;
     }
 
+    #quote {
+        right: 15%;
+    }
 }
